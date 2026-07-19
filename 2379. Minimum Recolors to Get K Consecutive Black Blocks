@@ -1,0 +1,22 @@
+class Solution{
+public int minColor(String blocks,int k){
+int whiteCount=0;
+for(int i =0;i<k;i++){
+if(block.charAt(i)=='W'){
+whiteCount++;
+}
+}
+int minRecolor=whiteCount;
+for(int right =k;i<blocks.length();right++){
+int left =right-k;
+ if(blocks.charAt(left)=='W'){
+whiteCount--;
+            }
+            if(blocks.charAt(right)=='W'){
+                whiteCount++;
+            }
+minRecolor=Math.max(minRcolor,whiteCount);
+}
+return minRecolor;
+}
+}
