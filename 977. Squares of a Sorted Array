@@ -1,0 +1,23 @@
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int square=0;
+        int store=0;
+        int [] arr= new int[nums.length];
+        for(int i =0;i<nums.length;i++){
+            store=nums[i];
+            square=store*store;
+arr[i]=square;
+        }
+        int temp=0;
+        for(int i =0;i<nums.length;i++){
+            for(int j=i+1;j<nums.length;j++){
+            if(arr[i]>arr[j]){
+               temp= arr[i];
+               arr[i]=arr[j];
+               arr[j]=temp;
+            }
+            }
+        }
+        return arr;
+    }
+}
