@@ -1,0 +1,17 @@
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        HashMap<Integer,Integer>map=new HashMap<>();
+        int j=0;
+        for(int i :nums){
+            if(map.containsKey(i)){
+             int x= map.get(i);
+             if(Math.abs(x-j)<=k){
+                return true;
+             }
+    }
+        map.put(i,j);
+    j++;
+}
+return false;
+    }
+}
