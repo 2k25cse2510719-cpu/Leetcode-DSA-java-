@@ -109,7 +109,7 @@ This repository helps me:
 
 # ⭐ Repository Goals
 
-- Solve 300+ LeetCode problems
+- Solve 3000+ LeetCode problems
 - Cover all major DSA topics
 - Write optimized Java solutions
 - Maintain clean and readable code
