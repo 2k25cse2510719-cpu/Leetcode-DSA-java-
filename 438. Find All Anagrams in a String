@@ -1,0 +1,25 @@
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer>ans=new ArrayList<>();
+        int n1=s.length();
+        int n2=p.length();
+        if(n2>n1){
+            return ans;
+        }
+        int []freq=new int [26];
+        for(char ch:p.toCharArray()){
+            freq[ch-'a']++;
+        }
+        int []window=new int[26];
+        for(int right=0;right<n1;right++){
+window[s.charAt(right)-'a']++;
+if(right>=n2){
+    window[s.charAt(right-n2)-'a']--;
+}
+if(right>=n2-1&&Arrays.equals(freq,window)){
+    ans.add(right-n2+1);
+}
+        }
+        return ans;
+    }
+}
