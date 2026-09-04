@@ -1,0 +1,21 @@
+class Solution {
+    public int[] getAverages(int[] nums, int k) {
+        int n=nums.length;
+        int []avgs=new int[n];
+        int left=0;
+        long sum=0;
+        Arrays.fill(avgs,-1);
+        for(int right=0;right<n;right++){
+            sum+=nums[right];
+            int average=0;
+            if(right-left+1==2*k+1){
+                average=(int)(sum/(2*k+1));
+                int mid=left+k;
+                avgs[mid]=average;
+                sum-=nums[left];
+                left++;
+            }
+       }
+       return avgs;
+    }
+}
