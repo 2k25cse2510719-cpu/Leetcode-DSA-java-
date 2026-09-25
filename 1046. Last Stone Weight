@@ -1,0 +1,17 @@
+class Solution {
+    public int lastStoneWeight(int[] stones) {
+        int n = stones.length;
+        while (n > 1) {
+            Arrays.sort(stones);
+            int largest = stones[n - 1];
+            int secondLargest = stones[n - 2];
+            if (largest == secondLargest) {
+                n -= 2;
+            } else {
+                stones[n - 2] = largest - secondLargest;
+                n--;
+            }
+        }
+        return n == 1 ? stones[0] : 0;
+    }
+}
